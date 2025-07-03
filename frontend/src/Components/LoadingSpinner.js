@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const LoadingSpinner = () => {
   return (
@@ -9,4 +9,4 @@ const LoadingSpinner = () => {
   )
 }
 
-export default LoadingSpinner
+export default LoadingSpinner;

@@ -29,6 +29,7 @@ const userSlice =createSlice({
         getError(state,action){
             state.errors =action.payload;
             state.loading = false;
+            state.isAuthenticated =false;
         },
         getCurrentUserRequest(state){
             state.loading =true;
@@ -48,6 +49,8 @@ const userSlice =createSlice({
             state.user = action.payload;
             state.isAuthenticated =false;
             state.loading= false;
+            state.errors = null;
+            state.success = false;
         },
         getPasswordRequest(state){
             state.loading=true;
@@ -59,7 +62,14 @@ const userSlice =createSlice({
         clearError(state){
             state.errors= null;
         },
+        logout(state) {
+      state.isAuthenticated = false;
+      state.user = null;
+      state.loading = false;
+      state.errors = null;
+      state.success = false;
     },
+}
 });
 
 export const userActions = userSlice.actions;

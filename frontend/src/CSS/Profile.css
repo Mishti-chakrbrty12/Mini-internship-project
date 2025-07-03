@@ -1,6 +1,9 @@
 .profile {
   display: flex;
   margin-top: 2rem;
+  justify-content: right;
+  align-items: right;
+  margin-left: 100px;
 }
 
 .avatar-profile {
@@ -9,6 +12,8 @@
   border: 4px solid #090909;
   border-radius: 50%;
   background-color: white;
+  justify-content: center;
+  align-items: center;
 }
 .userinfo {
   margin-left: 6rem;

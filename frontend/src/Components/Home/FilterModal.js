@@ -113,10 +113,13 @@ const handleRoomTypeChange=(selectedType) =>{
     <div
       className="modal-backdrop">
         <div className="modal-content">
-          <h4>Filters<hr></hr></h4>
-          <button className="close-button" onClick={onClose}>
-            <span> &times;</span>
-          </button>
+          <div className="modal-header">
+  <button className="close-button" onClick={onClose}>×</button>
+  <h2 className="modal-title">Filters</h2>
+</div>
+
+<hr />
+
 
           {/*Filter Section*/}
           <div className="modal-filters-container">

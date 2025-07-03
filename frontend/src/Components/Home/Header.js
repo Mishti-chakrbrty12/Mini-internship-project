@@ -6,6 +6,7 @@ import {useDispatch, useSelector} from "react-redux";
 import { propertyAction } from '../../Store/Property/property-slice';
 import { getAllProperties } from '../../Store/Property/property-action';
 import {Logout} from "../../Store/User/user-action";
+import {userActions} from "../../Store/User/user-slice";
 import {toast} from "react-toastify";
 
 const Header = () => {
@@ -13,7 +14,7 @@ const Header = () => {
   const {isAuthenticated, user} = useSelector((state) => state.user);
   const navigate= useNavigate();
   
-const logout =() =>{
+const logout = () =>{
   dispatch(Logout());
   toast.success("User has been logged out successfully");
   navigate("/");

@@ -242,6 +242,7 @@ input:focus {
   display: none;
   z-index: 999;
   overflow: scroll;
+  position:relative
 }
 .modal-image::before {
   content: "";
@@ -270,3 +271,61 @@ input:focus {
 .searchDate:hover::placeholder {
   color: black;
 }
+
+.property-page {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  width: 100%;
+  padding: 2rem 0;
+}
+
+.property-content {
+  flex: 2;
+}
+
+.booking-form-box {
+  flex: 1;
+  max-width: 400px;
+  position: sticky;
+  top: 100px;
+}
+
+@media (max-width: 768px) {
+  .property-page {
+    flex-direction: column;
+  }
+
+  .booking-form-box {
+    position: static;
+    width: 100%;
+    max-width: none;
+    margin-top: 2rem;
+  }
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 30px;
+  color: white;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.4);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.modal-close-btn:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: black;
+}
+

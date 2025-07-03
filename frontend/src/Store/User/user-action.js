@@ -18,7 +18,11 @@ export const getLogIn =(user)=> async(dispatch)=>{
     try{
         dispatch(userActions.getLoginRequest());
         const {data}= await axios.post("/api/v1/rent/user/login",user);
+        if(data.success && data.user){
         dispatch(userActions.getLoginDetails(data.user));
+        }else {dispatch(userActions.getError("Invalid login credentials"));
+
+        }
     } catch(error){
         dispatch(userActions.getError(error.response.data.message));
     }
@@ -82,8 +86,10 @@ export const updatePassword =(passwords)=> async(dispatch)=>{
 export const Logout =() => async(dispatch) =>{
     try{
         await axios.get("/api/v1/rent/user/logout");
+        localStorage.removeItem("token");
+        dispatch(userActions.logout());
         
     } catch(error){
-        dispatch(userActions.getError(error));
+        dispatch(userActions.getError(error.response?.data?.message || "Logout Failed"));
     }
 };

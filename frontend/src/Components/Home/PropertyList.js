@@ -20,7 +20,7 @@ const Card =({id,image,address,price,name})=>{
                 <h6><span class="material-symbols-outlined houseicon">home_pin</span>
                 {address}</h6>
                 <p>
-                <span  className="price"> ₹ {price} </span>{price} per night
+                <span  className="price"> ₹ {price} </span> per night
                </p>
             </main>
         </figcaption>
@@ -62,7 +62,7 @@ const PropertyList = () => {
             image={property.images[0].url}
             name={property.propertyName}
             address={`${property.address.city}, ${property.address.state}, ${property.address.pincode}`}
-            price={property._price}
+            price={property.price}
             />
         ))}
       

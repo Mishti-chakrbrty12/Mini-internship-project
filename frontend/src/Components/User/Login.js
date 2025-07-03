@@ -20,15 +20,16 @@ const submitHandler =(e) =>{
     e.preventDefault();
     dispatch(getLogIn({email, password}));
 };
-useEffect(()=>{
-    if(errors && errors.length >0){
-        toast.error(errors);
-        dispatch(userActions.clearError());
-    } else if (isAuthenticated){
-        navigate("/");
-        toast.success("User has logged successfully");
-    }
-}, [isAuthenticated, errors, navigate]);
+useEffect(() => {
+  if (errors && errors.length >0) {
+    toast.error(errors);
+    dispatch(userActions.clearError());
+  } else if (isAuthenticated) {
+    toast.success("User has logged in successfully");
+    navigate("/");
+  }
+}, [isAuthenticated, errors, dispatch, navigate]);
+
   return (
     <Fragment>
     <div className="row wrapper">
@@ -48,7 +49,7 @@ useEffect(()=>{
                         />
                         </div>
                         <div className="form-group">
-                            <label htmlForm="password_field">password</label>
+                            <label htmlFor="password_field">password</label>
                             <input
                             type="password"
                             id="password_field"
@@ -57,7 +58,7 @@ useEffect(()=>{
                             onChange={(e)=> setPassword(e.target.value)}
                             />
                             </div>
-                            <Link to="/user/forgotpassword "
+                            <Link to="/user/forgotpassword"
                             className ="float-right mb-4">Forgot Password</Link>
                             <button
                             id="login_button"

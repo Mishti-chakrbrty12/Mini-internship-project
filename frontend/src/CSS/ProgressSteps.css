@@ -5,6 +5,7 @@
   justify-content: center;
   margin-top: 5px;
   text-decoration: none;
+  align-items: center;
 }
 
 .progress-button {

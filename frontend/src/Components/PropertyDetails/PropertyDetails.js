@@ -44,8 +44,8 @@ const PropertyDetails = () => {
 
             </h6>
             <PropertyImg images={images}/>
-            <div className="middle-container row">
-                <div className="des-and-amenities col-md-8-col-sm-12">
+            <div className="property-page">
+                <div className="property-content">
                     <h2 className="property-description-header"> Description</h2>
                     <p className="property-description">
                         {description} <br/> <br/>
@@ -72,7 +72,7 @@ const PropertyDetails = () => {
                 <div  className="map-image-exinfo-container row">
                     <div className="map-image-container col-md-6 col-sm-12 col-12">
                         <h2 className="map-header">Where you will be</h2>
-                         {/*<MapComponent address={address}/>*/}
+                         < MapComponent address={address}/>
                     </div>
                     <div className="extra-info col-md-6 col-sm-12 col-12">
                         <h2 className="extra-heading">Extra Info</h2>
